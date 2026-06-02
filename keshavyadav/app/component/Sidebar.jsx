@@ -71,7 +71,7 @@ export default function Sidebar({ open, setOpen }) {
         <div>
           <div className="flex flex-col items-center">
             <img
-              src="https://i.pravatar.cc/200"
+              src="/Keshav_Yadav.jpg"
               alt="Profile"
               className="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-[0_0_40px_#06b6d4]"
             />
