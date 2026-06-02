@@ -10,40 +10,44 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "IndiaDealsGroup.com",
+    category: "Builder Website",
+    image: "/indiadealsgroup.png",
+    description:
+      "Builder-focused real estate website showcasing projects, project details, floor plans and media management.",
+    tech: ["Next.js", "React.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    liveUrl: "https://indiadealsgroup.com",
+    sourceUrl: "",
+  },
+  {
+    title: "Brandsdoor.in",
+    category: "Real Estate Portal",
+    image: "/brandsdoor.png",
+    description:
+      "Property listing portal with advanced search, dynamic filters, JWT authentication and state management.",
+    tech: ["React.js", "Tailwind CSS", "Node.js", "MongoDB", "Redux Toolkit"],
+    liveUrl: "https://brandsdoor.in",
+    sourceUrl: "",
+  },
+  {
     title: "Varnya CRM",
-    category: "Dashboard",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop",
+    category: "CRM",
+    image: "/coding1.svg",
     description:
-      "Modern CRM dashboard with analytics, project management and lead tracking.",
-    tech: ["Next.js", "Tailwind", "Node.js"],
+      "Customer relationship management system with dashboards, reporting and PDF generator features.",
+    tech: ["React.js", "Tailwind CSS", "Node.js", "FastAPI", "MongoDB"],
+    liveUrl: "",
+    sourceUrl: "",
   },
   {
-    title: "Real Estate Platform",
-    category: "Web App",
-    image:
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop",
+    title: "Siona.tv",
+    category: "Media Platform",
+    image: "/coding2.svg",
     description:
-      "Property listing platform with filters, animations and responsive UI.",
-    tech: ["React", "Redux", "Tailwind"],
-  },
-  {
-    title: "Portfolio Website",
-    category: "Portfolio",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-    description:
-      "Premium animated developer portfolio with futuristic neon theme.",
-    tech: ["Next.js", "Framer Motion"],
-  },
-  {
-    title: "E-Commerce Store",
-    category: "E-Commerce",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    description:
-      "Responsive shopping platform with payment integration and admin panel.",
-    tech: ["React", "Node.js", "MongoDB"],
+      "Media and streaming portal focused on content presentation and responsive layouts.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "",
+    sourceUrl: "",
   },
 ];
 
@@ -100,7 +104,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Categories */}
-      <section className="flex flex-wrap gap-4 mb-12">
+      {/* <section className="flex flex-wrap gap-4 mb-12">
         {[
           "All",
           "Dashboard",
@@ -115,7 +119,7 @@ export default function ProjectsPage() {
             {item}
           </button>
         ))}
-      </section>
+      </section> */}
 
       {/* Projects Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -186,13 +190,35 @@ export default function ProjectsPage() {
               {/* Buttons */}
               <div className="flex gap-4 mt-8">
                 
-                <button className="flex-1 bg-gradient-to-r from-cyan-400 to-blue-500 py-3 rounded-xl font-medium hover:scale-[1.02] transition-all">
-                  Live Demo
-                </button>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 text-center bg-gradient-to-r from-cyan-400 to-blue-500 py-3 rounded-xl font-medium hover:scale-[1.02] transition-all"
+                  >
+                    Live Demo
+                  </a>
+                ) : (
+                  <button className="flex-1 bg-gradient-to-r from-cyan-400 to-blue-500 py-3 rounded-xl font-medium opacity-70 cursor-not-allowed">
+                    Live Demo
+                  </button>
+                )}
 
-                <button className="flex-1 border border-white/10 py-3 rounded-xl hover:border-cyan-400 hover:text-cyan-400 transition-all">
-                  Source Code
-                </button>
+                {project.sourceUrl ? (
+                  <a
+                    href={project.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 text-center border border-white/10 py-3 rounded-xl hover:border-cyan-400 hover:text-cyan-400 transition-all"
+                  >
+                    Source Code
+                  </a>
+                ) : (
+                  <button className="flex-1 border border-white/10 py-3 rounded-xl opacity-70 cursor-not-allowed">
+                    Source Code
+                  </button>
+                )}
               </div>
             </div>
 

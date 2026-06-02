@@ -1,10 +1,58 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const { name, email, subject, message } = formData;
+
+    if (!name || !email || !subject || !message) {
+      setStatus("Please fill out all fields before submitting.");
+      return;
+    }
+
+    setSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        setStatus(`Unable to send your message. ${errorText}`);
+      } else {
+        setStatus("Thank you! Your message has been sent.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
+    } catch (error) {
+      setStatus("Something went wrong. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#050816] text-white px-6 md:px-12 xl:px-20 py-16 overflow-hidden relative">
       
@@ -45,6 +93,23 @@ export default function ContactPage() {
             Contact Information
           </h2>
 
+          <div className="mb-8 flex flex-col items-center gap-6 rounded-[32px] bg-[#111827] p-6 border border-white/10">
+            <div className="relative h-40 w-40 overflow-hidden rounded-[32px] border border-white/10">
+              <Image
+                src="/Keshav_Yadav.jpg"
+                alt="Keshav Yadav"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold">Keshav Yadav</h3>
+              <p className="mt-3 text-slate-400">
+                I’m available for collaborations, freelance work, and project discussions. Send a message and I’ll get back to you soon.
+              </p>
+            </div>
+          </div>
+
           <div className="space-y-6">
             
             {/* Email */}
@@ -57,7 +122,7 @@ export default function ContactPage() {
               <div>
                 <p className="text-slate-400 text-sm">Email</p>
                 <h3 className="text-lg font-medium">
-                  keshav@example.com
+                  keshavcoder81@gmail.com
                 </h3>
               </div>
             </div>
@@ -72,7 +137,7 @@ export default function ContactPage() {
               <div>
                 <p className="text-slate-400 text-sm">Phone</p>
                 <h3 className="text-lg font-medium">
-                  +91 9876543210
+                  +91 7906518272
                 </h3>
               </div>
             </div>
@@ -128,7 +193,7 @@ export default function ContactPage() {
             Send Message
           </h2>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             
             {/* Name */}
             <div>
@@ -139,6 +204,9 @@ export default function ContactPage() {
               <input
                 type="text"
                 placeholder="Enter your name"
+                value={formData.name}
+                required
+                onChange={(event) => handleChange("name", event.target.value)}
                 className="w-full bg-[#111827] border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
               />
             </div>
@@ -152,6 +220,9 @@ export default function ContactPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                value={formData.email}
+                required
+                onChange={(event) => handleChange("email", event.target.value)}
                 className="w-full bg-[#111827] border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
               />
             </div>
@@ -165,6 +236,9 @@ export default function ContactPage() {
               <input
                 type="text"
                 placeholder="Project discussion"
+                value={formData.subject}
+                required
+                onChange={(event) => handleChange("subject", event.target.value)}
                 className="w-full bg-[#111827] border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
               />
             </div>
@@ -178,18 +252,27 @@ export default function ContactPage() {
               <textarea
                 rows={6}
                 placeholder="Write your message..."
+                value={formData.message}
+                required
+                onChange={(event) => handleChange("message", event.target.value)}
                 className="w-full bg-[#111827] border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all resize-none"
               ></textarea>
             </div>
 
+            {status ? (
+              <p className="text-sm text-center text-red-400">{status}</p>
+            ) : null}
+
             {/* Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 hover:scale-[1.02] transition-all"
+              disabled={submitting}
+              className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 hover:scale-[1.02] transition-all disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Message
+              {submitting ? "Sending..." : "Send Message"}
               <Send size={20} />
             </button>
+
           </form>
         </motion.div>
       </section>

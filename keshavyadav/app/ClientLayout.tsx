@@ -10,7 +10,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <div className="min-h-screen bg-[#020617] text-white">
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
       <div
-        className={`relative transition-all duration-300 ${
+        className={`relative transition-all duration-300 pt-16 lg:pt-20 ${
           sidebarOpen ? "lg:pl-[300px]" : "lg:pl-0"
         }`}
       >

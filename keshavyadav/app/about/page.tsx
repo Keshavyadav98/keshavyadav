@@ -27,14 +27,14 @@ export default function AboutPage() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-bold mt-6 leading-tight">
-            Passionate Full Stack Developer
+            Experienced Full Stack Developer
           </h1>
 
           <p className="text-slate-400 text-lg mt-6 leading-8">
-            I build modern, scalable and visually stunning web applications
-            using React.js, Next.js, Node.js and modern UI technologies.
-            I love creating smooth user experiences with clean architecture
-            and futuristic designs.
+            Results-oriented Full Stack Developer with over 4 years of experience
+            building scalable web applications, CRM systems, real estate portals,
+            and cloud-powered platforms using modern frontend and backend
+            technologies.
           </p>
 
           {/* Info Cards */}
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="font-semibold">Experience</h3>
                   <p className="text-slate-400 text-sm">
-                    5+ Years Experience
+                    4+ Years Professional
                   </p>
                 </div>
               </div>
@@ -80,9 +80,9 @@ export default function AboutPage() {
               <div className="flex items-center gap-3">
                 <Code2 className="text-cyan-400" />
                 <div>
-                  <h3 className="font-semibold">Tech Stack</h3>
+                  <h3 className="font-semibold">Specialization</h3>
                   <p className="text-slate-400 text-sm">
-                    React, Next.js, Node.js
+                    Full Stack & Cloud Applications
                   </p>
                 </div>
               </div>
@@ -136,8 +136,12 @@ export default function AboutPage() {
           {[
             { name: "React.js", value: "95%" },
             { name: "Next.js", value: "92%" },
+            { name: "Tailwind CSS", value: "96%" },
             { name: "JavaScript", value: "90%" },
-            { name: "Node.js", value: "85%" },
+            { name: "Node.js", value: "88%" },
+            { name: "Express.js", value: "85%" },
+            { name: "MongoDB", value: "90%" },
+            { name: "AWS / Docker", value: "82%" },
           ].map((skill, index) => (
             <div
               key={index}
@@ -172,20 +176,21 @@ export default function AboutPage() {
 
             <div className="bg-[#0B1220] border border-white/10 rounded-2xl p-6">
               <h3 className="text-2xl font-semibold">
-                Frontend Developer
+                Full Stack Developer
               </h3>
 
               <p className="text-cyan-400 mt-2">
-                Bdaar Solutions Pvt. Ltd.
+                DSI IndiaDealss Pvt. Ltd.
               </p>
 
               <span className="text-slate-400 text-sm">
-                2023 - Present
+                2025 - Present
               </span>
 
               <p className="text-slate-400 mt-4 leading-7">
-                Developed scalable frontend applications using React.js,
-                Tailwind CSS and Next.js with modern UI/UX principles.
+                Built a real estate portal with reusable React components,
+                API integrations, cloud deployment on AWS EC2, and MongoDB data
+                management.
               </p>
             </div>
           </div>
@@ -195,7 +200,31 @@ export default function AboutPage() {
 
             <div className="bg-[#0B1220] border border-white/10 rounded-2xl p-6">
               <h3 className="text-2xl font-semibold">
-                UI Developer
+                Full Stack Developer
+              </h3>
+
+              <p className="text-cyan-400 mt-2">
+                Bdaar Solutions Pvt. Ltd.
+              </p>
+
+              <span className="text-slate-400 text-sm">
+                2023 - 2025
+              </span>
+
+              <p className="text-slate-400 mt-4 leading-7">
+                Delivered CRM and business applications using React.js, FastAPI,
+                Node.js, MongoDB, and Tailwind CSS with secure authentication
+                flows.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -left-[42px] top-2 w-4 h-4 rounded-full bg-cyan-400"></div>
+
+            <div className="bg-[#0B1220] border border-white/10 rounded-2xl p-6">
+              <h3 className="text-2xl font-semibold">
+                Frontend Developer
               </h3>
 
               <p className="text-cyan-400 mt-2">
@@ -207,8 +236,8 @@ export default function AboutPage() {
               </span>
 
               <p className="text-slate-400 mt-4 leading-7">
-                Created responsive dashboards and interactive web interfaces
-                with reusable component architecture.
+                Created responsive media portal interfaces using HTML, CSS, and
+                JavaScript, focusing on performance and cross-browser support.
               </p>
             </div>
           </div>

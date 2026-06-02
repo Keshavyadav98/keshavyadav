@@ -1,0 +1,9 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#071023" />
+  <g transform="translate(160,160)" fill="#60a5fa" font-family="monospace" font-size="44">
+    <text x="0" y="60" opacity="0.95">/* sample component */</text>
+    <text x="0" y="140" opacity="0.95">const App = () =&gt; (</text>
+    <text x="0" y="220" opacity="0.95">  &lt;div&gt;Hello&lt;/div&gt;</text>
+    <text x="0" y="300" opacity="0.95">);</text>
+  </g>
+</svg>

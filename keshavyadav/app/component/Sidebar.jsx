@@ -98,9 +98,14 @@ export default function Sidebar({ open, setOpen }) {
           </div>
         </div>
 
-        <button className="mt-8 w-full rounded-xl border border-cyan-400 py-3 text-center text-cyan-400 transition hover:bg-cyan-400 hover:text-black lg:mt-0">
+        <a
+          href="https://drive.google.com/file/d/1kIviepcwIU1xEWLYvw_1ClIbOZFB7yqu/view?usp=drive_link"
+          target="_blank"
+          rel="noreferrer"
+          className="cursor-pointer"
+        ><button className="cursor-pointer mt-8 w-full rounded-xl border border-cyan-400 py-3 text-center text-cyan-400 transition hover:bg-cyan-400 hover:text-black lg:mt-0">
           Download CV
-        </button>
+        </button></a>
       </aside>
 
       {open && (

@@ -1,9 +1,13 @@
 export default function Skills() {
   const skills = [
-    ["React", "95%"],
-    ["Next.js", "90%"],
-    ["Node.js", "85%"],
-    ["Tailwind", "96%"],
+    ["React.js", "95%"],
+    ["Next.js", "92%"],
+    ["Tailwind CSS", "96%"],
+    ["JavaScript", "90%"],
+    ["Node.js", "88%"],
+    ["Express.js", "85%"],
+    ["MongoDB", "90%"],
+    ["AWS / Docker", "82%"],
   ];
 
   return (
@@ -13,11 +17,11 @@ export default function Skills() {
           <div>
             <h2 className="text-4xl font-bold sm:text-5xl">My Skills</h2>
             <p className="mt-3 max-w-2xl text-gray-400 sm:text-lg">
-              Strong technical skills combined with clean design and best practices for every device.
+              Strong technical skills combined with clean design, scalable architecture, and cloud-ready delivery.
             </p>
           </div>
           <span className="inline-flex rounded-full border border-cyan-400/30 bg-white/5 px-4 py-2 text-sm text-cyan-300">
-            Focused on responsive & modern UI
+            Focused on full stack excellence
           </span>
         </div>
 

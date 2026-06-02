@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0f1724" />
+  <g transform="translate(120,160)" fill="#9ae6b4" font-family="monospace" font-size="48">
+    <text x="0" y="60" opacity="0.95">&lt;div&gt;</text>
+    <text x="0" y="140" opacity="0.95">  function hello() {'{'} </text>
+    <text x="0" y="220" opacity="0.95">    console.log('hi')</text>
+    <text x="0" y="300" opacity="0.95">  {'}'}</text>
+    <text x="0" y="380" opacity="0.95">&lt;/div&gt;</text>
+  </g>
+  <rect x="920" y="40" width="220" height="60" rx="8" fill="#f8fafc" opacity="0.06" />
+</svg>

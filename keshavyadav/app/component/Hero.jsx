@@ -42,15 +42,7 @@ export default function Hero() {
               applications.
             </p>
 
-            <div className="flex gap-5 mt-10">
-              <button className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition-all shadow-[0_0_30px_#06b6d4]">
-                View Work
-              </button>
-
-              <button className="border border-white/20 px-8 py-4 rounded-2xl hover:border-cyan-400 hover:text-cyan-400 transition-all">
-                Hire Me
-              </button>
-            </div>
+            
           </motion.div>
         </div>
 
